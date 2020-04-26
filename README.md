@@ -1,2 +1,73 @@
 # R_Analysis
-Statistical and R
+## Project Overview
+The project requires us the understand the statistical data and the various data interpretaion model using R and Rstudio.
+## Resources
+- Data Source: R dataset, Mechacar.csv and suspension_coil_test.csv
+- Software: Rstudio and R.
+
+## Challenge Overview and Analysis
+### MPG Regression:
+The Linear regression model was used to predict the quantative response of the "mpg" based on the predictive variables (vehicle length, vehicle weight, spoiler angle , ground clearance and AWD). The dataset used in this model was the MechaCar Data . 
+Analysis and Findings:  
+**1. Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset**
+ 
+ The coefficient -Estimate for the vehicle length (6.267e+00) and ground clearance(6.267e+00) shows the strong impact on the miles per gallon (car performance). The coefficient-Estimate of the vehicle weight also have some impact on the mpg of the vehicle . The Coefficient -Pr(>t) further shows that the vehicle length (2.60e-12) and gorund clearance (5.21e-08)represents the highly significant value which allows us to reject the null hypothesis and conclude that there is a relationship between mpg and (vehicle lenght and ground clearance ). However, the coefficient -Pr(>t) value for the vehicle weight (0.0776) shows the some impact on the mpg value of the vehicle.
+
+**2.Is the slope of the linear model considered to be zero?**
+ No , The slope of the linear model cannot be considered zero as the coefficient -Estimate for the vehicle length (6.267e+00) and ground clearance(6.267e+00) shows the strong impact on the miles per gallon (car performance). The coefficient-Estimate of the vehicle weight also have some impact on the mpg of the vehicle .
+
+**3. Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?**
+ Yes, The R-squared statistics provides the measure of how well the model is fitting the actual data. The R-squared value of  0.7149 means that roughly 71% of the variance found in the response variable (mpg) can be explained by the predictor variable .The F-statistic value of  22.07 and  p-value of 5.35e-11 further supports our conclusion .
+
+
+
+### Suspension Coil Summary:
+The suspension coil dataset was grouped by based on the Lots and the summary of PSI value for the individual lots shows the below report. 
+
+Manufacturing_Lot PSI_mean  PSI_sd  PSI_median 	PSI_variance
+  <fct>           <dbl>     <dbl>    <dbl>       <dbl>
+1 Lot1             1500     0.990    1500        0.980
+2 Lot2             1500.    2.73     1500        7.47 
+3 Lot3             1496.    13.0     1498.       170.
+   
+The Lot1 and Lot2 shows the mean value of 1500 , the standard deviation shows the value of Lot1(0.990) and Lot2(2.73) respectivaly. The variance for Lot1 and Lot2  are 0.980 and 7.47 respectively.
+
+**1.The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per inch. Does the current manufacturing data meet this design specification? Why or why not? **
+
+Analysis:
+The Variance for PSI value for the Lot1 and Lot2 are well within the design specifications .However, the cars data for the Lot3 shows a PSI variance of 170 which is more than the level specified by the manufacturer. 
+
+
+### Suspension Coil T-Test:
+**1. determine if the suspension coil’s pound-per-inch results are statistically different from the mean population results of 1,500 pounds per inch - provide a small writeup of your interpretation and findings for the t-test results**
+Analysis:
+The t-test performed on the various Lots yields the following results :
+T-test for **Lot1** yeilds the **Mean of 1500** pounds per inch and the **p-value =1**. The p-value is well above the significance level.Therefore , the higher p value proves that the sample results are consistent with a null hypothesis  that is true.
+T-test for **Lot2** yeilds the **Mean of 1500.2 ** pounds per inch and the **p-value =0.6072** The p-value is above the significance level.Therefore , the higher p value proves that the sample results are consistent with a null hypothesis  that is true.
+T-test for **Lot3** yeilds the **Mean of 1496.14** pounds per inch and the **p-value =0.04168** The p-value is below the significance level.Therefore , the lower p value proves that the sample results are  not consistent with a null hypothesis  that is true.
+
+
+
+### Independant Study:
+The exploratory analysis of MechaCar Data delve into the various factors which may influence the car performance (mpg).After looking at the dataset provided in the R , the dataset selected for this independant study is "mtcars" as it has the  "mpg" values similar to the MechaCar dataset.It seemed that horsepower could be a metric for comparative effects on mpg. Although the MechaCar data did not include it, the "mtcars" data did, so a test run was done on a sample of 32 cars of the mtdata to see if horsepower would be worthy of further examination.
+The summary of the multiple linear regression model of the dataset(mtcars) reveals that R-squared value of approximately 86% and a p-value of 3.793e-07,
+
+**1. Think critically about what metrics you would think would be of interest to a consumer (cost, fuel efficiency, color options, etc.)**
+
+ The independant variable that was chosen was "hp" and this study will help to undertsand how hp correlates with miles per gallon data.
+
+**2. Determine what question we would ask, what the null and alternative hypothesis would be to answer that question, and what statistical test could be used to test this hypothesis.**
+
+The close look at the all the factors available in the dataset reveal that many variable will be dependant on each other for example weight and displacement.Horsepower of the engine is considered to be one of the criteria of interest to the consumer.
+The hypothesis would be do we have sufficient data to determine the level of correlation between mpg and hp.
+
+**3. Knowing what test should be used, what data should be collected?**
+
+ After looking at the dataset provided in the R , the dataset selected for this independant study is "mtcars" as  it has the  "mpg" values similar to the MechaCar dataset.
+ The mean of the hp for the dataset is 146.68.The test performed to determine the hypothesis was a T-Test, performed on the sample to determines the p-value of 0.09998. The correlation of hp and mpg (-0.7761684)shows a fairly strong negative correlation.The summary of the linear regression model of the mpg and hp shows that Co-efficients of -0.06823 and p-value of 1.79e-07 which is shows a strong significance effect on the dependant variable (mpg).
+**Conclusion:** The data shows that horsepower could be a metric for comparative effects on mpg. The evidence suggests that it would be a worthy factor to be analysed and therefore would design a mechacar horsepower study.
+
+
+
+
+
